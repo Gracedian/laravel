@@ -1,10 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class Tabelbuku extends Migration
+class CreateBukusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +11,8 @@ class Tabelbuku extends Migration
      */
     public function up()
     {
-        Schema::create('buku', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('bukus', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('judul');
             $table->string('penerbit');
             $table->integer('tahun_terbit');
@@ -22,7 +20,6 @@ class Tabelbuku extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -30,6 +27,6 @@ class Tabelbuku extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buku');
+        Schema::dropIfExists('bukus');
     }
 }
